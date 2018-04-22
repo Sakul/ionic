@@ -15,11 +15,13 @@
 
 ![img](/imgs/ionic.jpg)
 
-* 24: Ionic framework & Ionic creator (web tools)
-* 25: สร้าง mobile app อย่างง่าย
-* 26: เขียน mobile app ของเราเอง
+|วันที่|การผจญภัย|
+|-|-|
+|24|Ionic Creator แค่ลากวางก็ได้ App!|
+|25|มารู้จักโครงสร้างของ App กันเถอะ|
+|26|App สวยด้วยมือเรา|
 ---
-### Ionic
+### End
 
-[Link](https://gitpitch.com/Sakul/ionic)
+[กลับสู่หน้าหลัก](https://gitpitch.com/Sakul/ionic)
 ---
