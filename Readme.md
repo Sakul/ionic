@@ -8,7 +8,7 @@
 [กดที่นี่เพื่อดูสไลด์](https://gitpitch.com/Sakul/ionic?p=day-1)
 
 ## โปรแกรมที่ต้องใช้
-
+* [วิธีการติดตั้ง Ionic](installing-ionic.md)
 * macOS
     * [NodeJs](https://nodejs.org/dist/v8.11.1/node-v8.11.1-x64.msi)
     * [VSCode](https://go.microsoft.com/fwlink/?Linkid=620882)
