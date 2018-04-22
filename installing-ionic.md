@@ -1,6 +1,5 @@
 # การติดตั้ง Ionic
 
-
 Ionic apps ถูกสร้างและพัฒนาโดยใช้ Ionic command line (CLI) เป็นส่วนใหญ่ และใช้ Cordova ในการทำให้กลายเป็น native app ดังนั้นเราเลยจำเป็นต้องทำการติดตั้งโปรแกรมต่างๆเพื่อที่จะนำไปสร้าง app ดังนี้
 
 ### การติดตั้ง Node
@@ -44,3 +43,5 @@ ionic serve
 ![img](imgs/install-ionic.png)
 
 ![img](imgs/ionic-serve.png)
+
+[อ้างอิง](https://ionicframework.com/docs/intro/installation)
