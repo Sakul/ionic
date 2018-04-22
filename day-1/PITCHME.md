@@ -1,19 +1,19 @@
 ### Mobile app สร้างง่าย ทำได้จริง
 
-![img](imgs/mobileapp-system.png)
+![img](/imgs/mobileapp-system.png)
 
 ---
 ### Mana team
 
-![img](imgs/mana.jpg)
+![img](/imgs/mana.jpg)
 ---
 ### เรียนแล้วจะได้อะไร ?
 
-![img](imgs/apps.jpg)
+![img](/imgs/apps.jpg)
 ---
 ### ภาพรวมของครอส์
 
-![img](imgs/ionic.jpg)
+![img](/imgs/ionic.jpg)
 
 * 24: Ionic framework & Ionic creator (web tools)
 * 25: สร้าง mobile app อย่างง่าย
@@ -21,5 +21,5 @@
 ---
 ### Ionic
 
-[Link](?p=day-1)
+[Link](https://gitpitch.com/Sakul/ionic)
 ---
