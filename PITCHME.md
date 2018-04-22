@@ -1,15 +1,21 @@
-# Flux 
+# Mobile app สร้างง่าย ทำได้จริง
 
-An application architecture for React
-
----
-
-### Flux Design
-
-- Dispatcher: Manages Data Flow
-- Stores: Handle State & Logic
-- Views: Render Data via React
+![img](imgs/mobileapp-system.png)
 
 ---
+### Who we are
 
-![Flux Explained](https://facebook.github.io/flux/img/flux-simple-f8-diagram-explained-1300w.png)
+- Mana app team!
+---
+### เรียนแล้วจะได้อะไร
+
+- ???
+---
+### Course overview
+
+- ???
+---
+### Ionic
+
+- ???
+---
