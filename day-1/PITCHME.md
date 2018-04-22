@@ -23,5 +23,4 @@
 ---
 ### End
 
-[กลับสู่หน้าหลัก](https://gitpitch.com/Sakul/ionic)
----
+[กลับสู่หน้าหลัก](https://github.com/Sakul/ionic)
