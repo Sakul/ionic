@@ -9,8 +9,9 @@
     * ข้อดี ~ ข้อเสีย ของ Ionic Creator
 * วันที่ 2
     * [การติดตั้ง Ionic](installing-ionic.md)
+    * [โครงสร้างโปรเจค](tutorial-structure.md)
     * Command line game ;)
-    * [มาสร้าง Ionic app ตัวแรกของเรากันเถอะ](turotial-ionic.md)
+    * [มาสร้าง Ionic app ตัวแรกของเรากันเถอะ](tutotial-ionic.md)
     * App ตัวแรกบนมือถือของฉัน Ionic DevApp
 * วันที่ 3
     * [Ionic Cloud](https://dashboard.ionicframework.com)

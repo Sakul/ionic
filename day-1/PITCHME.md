@@ -1,6 +1,6 @@
 ### Mobile app สร้างง่าย ทำได้จริง
 
-![img](/imgs/mobileapp-system.png)
+![img](/imgs/course.jpg)
 
 ---
 ### Mana team
@@ -21,6 +21,6 @@
 |25|มารู้จักโครงสร้างของ App กันเถอะ|
 |26|App สวยด้วยมือเรา|
 ---
-### End
+### ionicframework.com
 
-[กลับสู่หน้าหลัก](https://github.com/Sakul/ionic)
+![img](/imgs/ionic-website.png)
