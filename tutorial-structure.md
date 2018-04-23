@@ -1,28 +1,28 @@
-# Project Structure
+# โครงสร้างโปรเจค
 
-<a class="improve-v2-docs" href='https://github.com/ionic-team/ionic-site/edit/master/content/docs/intro/tutorial/project-structure/index.md'>
-  Improve this doc
-</a>
+คราวนี้เราจะได้ลองดูส่วนประกอบต่างๆของตัว Ionic app ที่เราได้สร้างขึ้นมากันบ้าง โดยตัวโปรเจคของเราจะเป็นลักษณะของ [Cordova](/docs/v1/what-is/#cordova) ซึ่งเจ้าตัว Cordova คือตัวที่จะทำให้เราติดตั้ง native plugins และ platform-specific ได้
 
-Let's walk through the anatomy of an Ionic app. Inside of the folder that was
-created, we have a typical [Cordova](/docs/v1/what-is/#cordova) project
-structure where we can install native plugins, and create platform-specific
-project files.
+![img](imgs/structure01.png)
 
-<h3 class="file-title">./src/index.html</h3>
+# ./src
 
-`src/index.html` is the main entry point for the app, though its purpose is to
-set up script and CSS includes and bootstrap, or start running, our app. We
-won't spend much of our time in this file.
+ภายในโฟเดอร์ `src` เราจะพบ code ของเรา ซึ่งเจ้า code ต่างๆเหล่านี้แหละที่ทำหน้าที่ทำให้ app ของเราทำงานได้ ดังนั้นเวลาเราเขียน code เราจะมาเขียนไว้ที่โฟเดอร์นี้
 
-For your app to function, Ionic looks for the `<ion-app>` tag in your HTML. In
-this example we have:
+ถ้าเราใช้คำสั่ง `ionic serve` เมื่อไหร่ ตัวโปรแกรมจะทำการแปลง code [transpiled](/docs/resources/what-is/#transpiler) ทั้งหมดที่อยู่ภายในโฟเดอร์ `src` ให้กลายเป็นภาษา Javascript ที่ตัว browser สามารถเข้าใจและนำไปแสดงผลต่อได้ [ES5](/docs/resources/what-is/#es5)
+จากที่กล่าวมาทำให้เราพัฒนา Ionic app โดยใช้ภาษา TypeScript ได้ แล้วค่อยทำการแปลงภาษา TypeScript ให้กลายเป็นภาษา Javascript เพื่อให้ browser สามารถนำไปทำงานต่อได้
+
+# ./src/index.html
+![img](imgs/structure-index.png)
+
+`src/index.html` คือจุดแรกสุดที่ตัว Ionic app จะทำการเปิดขึ้นมา ซึ่งเจ้าไฟล์นี้มีหน้าที่ในการจัดการเตรียมการทุกอย่างให้ตัว app ของเราพร้อมทำงาน เช่นเตรียม script, CSS ทำ bootstrap ซึ่งในตอนนี้เรายังไม่จำเป็นจะต้องลงรายละเอียดกับไฟล์นี้มากนัก
+
+สิ่งที่น่าสนใจของไฟล์นี้คือ tag ที่ชื่อว่า `<ion-app>`
 
 ```html
 <ion-app></ion-app>
 ```
 
-And the following scripts near the bottom:
+ซึ่งจะตามมาด้วย scripts ด้านล่าง 3 ตัว ตามตัวอย่างด้านล่าง
 
 ```html
 <!-- Ionic's root component and where the app will load -->
@@ -39,75 +39,41 @@ And the following scripts near the bottom:
 <script src="build/main.js"></script>
 ```
 
-These scripts are all generate by the build system, so no need to worry about
-them.
+เจ้าพวก scripts พวกนี้ถูกสร้างขึ้นโดยอัตโนมัติหลังจากที่เราสร้าง app ซึ่งตอนนี้ยังไม่ได้ต้องสนใจกับพวกมันมากนัก
 
-<h3 class="file-title">./src/</h3>
+# ./src/app/app.module.ts
+ไฟล์ `src/app/app.module.ts` คือจุดแรกของ code ที่โปรแกรมจะเริ่มทำเข้ามาทำงานด้วย
 
-Inside of the `src` directory we find our code. This is where most of
-the work for an Ionic app will take place. When we run `ionic serve`, our code
-inside of `src/` is [transpiled](/docs/resources/what-is/#transpiler) into the
-correct Javascript version that the browser understands (currently,
-[ES5](/docs/resources/what-is/#es5)). That means we can work at a higher level
-using TypeScript, but compile down to the older form of Javascript the browser
-needs.
+![img](imgs/structure-appmodule.png)
 
-`src/app/app.module.ts` is the entry point for our app.
-
-Near the top of the file, we should see this:
+เมื่อทำการเปิดดูภายในไฟล์เราจะพบ code ที่มีหน้าตาเหมือนกับตัวอย่างด้านล่างนี้
 
 ```ts
 @NgModule({
-  declarations: [MyApp, HelloIonicPage, ItemDetailsPage, ListPage],
+  declarations: [MyApp, HomePage],
   imports: [BrowserModule, IonicModule.forRoot(MyApp)],
-  bootstrap: [IonicApp],
-  entryComponents: [MyApp, HelloIonicPage, ItemDetailsPage, ListPage],
-  providers: []
+  bootstrap: [IonicApp], 
+  entryComponents: [MyApp, HomePage],
+  providers: [StatusBar, SplashScreen, {provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
 export class AppModule {}
 ```
 
-Every app has a _root module_ that essentially controls the rest of the
-application. This is very similar to `ng-app` from Ionic 1 and AngularJS. This is
-also where we bootstrap our app using `ionicBootstrap`.
+โดยปรกติโปรแกรมจะมีสิ่งที่เรียกว่า _root module_ ที่คอยทำหน้าที่ควมคุมการทำงานของ app ทั้งหมด (ที่คล้ายกับ `ng-app` ที่อยู่ใน Ionic 1 และ AngularJS)
 
-In this module, we're setting the root component to MyApp, in
-`src/app/app.component.ts`. This is the first component that gets loaded in our
-app, and typically it's an empty shell for other components to be loaded into.
-In `app.component.ts`, we're setting our template to `src/app/app.html`, so
-let's look in there.
+ภายใน module นี้จะทำหน้าที่ในการกำหนด root component เป็น MyApp ที่อยู่ในไฟล์
+`src/app/app.component.ts` ดังนั้น MyApp component จะถูกโหลดมาใช้งานเป็น component แรก และโดยปรกติมันจะไม่มีอะไรเพื่อเตรียมรองรับ components อื่นๆที่จะโหลดเข้ามาต่อ
 
-<h3 class="file-title">./src/app/app.html</h3>
+ถ้าเราทำการเปิดไฟล์ `app.component.ts` เราจะพบว่าไฟล์ `src/app/app.html` ถูกกำหนดให้เป็น template ในการแสดงผลไว้แล้ว
 
-Here's the main template for the app in `src/app/app.html`:
+# ./src/app/app.html
+
+ถ้าเราทำการเปิดดูไฟล์ `src/app/app.html` เราจะพบ code ตามตัวอย่างด้านล่างนี้
 
 ```html
-<ion-nav id="nav" [root]="rootPage" #nav swipeBackEnabled="false"></ion-nav>
-
-<ion-menu [content]="nav">
-
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Pages</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {% raw %}{{p.title}}{% endraw %}
-      </button>
-    </ion-list>
-  </ion-content>
-
-</ion-menu>
+<ion-nav [root]="rootPage"></ion-nav>
 ```
 
-In this template, we set up an [`ion-menu`](/docs//components/#menus) to
-function as a side menu, and then an [`ion-nav`](/docs//api/components/nav/Nav/)
-component to act as the main content area. The
-[`ion-menu`](/docs//components/#menus)'s `[content]` property is bound to the
-local variable `nav` from our [`ion-nav`](/docs//api/components/nav/Nav/), so it
-knows where it should animate around.
+จากตัวอย่างด้านบน ตัว template ได้กำหนดให้นำข้อมูลจากตัวแปร `rootPage` มาใช้ ซึ่งเจ้าตัว `rootPage` ถูกกำหนดว่ามันมาจาก `/pages/home/home` ซึ่ง component นี้ได้ใช้ template จากไฟล์ `./src/app/pages/home/home.html` มาแสดงผล ดังนั้นตัว app ของเราเลยทำการแสดงหน้าตาออกมาเป็นตามรูปด้านล่างนี้
 
-Next let's see how to create more pages and perform basic navigation.
+![img](imgs/ionic-serve.png)
