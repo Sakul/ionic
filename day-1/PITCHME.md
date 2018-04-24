@@ -22,29 +22,18 @@
 |26|App สวยด้วยมือเรา|
 ---
 ### มารู้จัก Ionic กันเถอะ
-![img](/imgs/ioniclogo.jpg)
+![img](/imgs/ioniclogo.jpeg)
 ---
-### End
-### มารู้จัก Ionic กันเถอะ
-![img](/imgs/ioniclogo.jpg)
----
-### End
-###
 ![img](/imgs/browser.jpg)
 ---
-###
-![img](/imgs/mobile.jpg)
+![img](/imgs/mobile.png)
 ---
-###
 ![img](/imgs/android-ios.jpg)
 ---
-###
 ![img](/imgs/xcode-android.png)
 ---
-###
 ![img](/imgs/crossplatforms.jpg)
 ---
-###
 ![img](/imgs/webtech.jpg)
 ---
 ### ionicframework.com
